@@ -1,0 +1,51 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.memberservice.repository.MemberRepository">
+    <select id="findEmailByNameAndPhone" resultType="string">
+        SELECT email
+        FROM member
+        WHERE name = #{name}
+          AND phone_number = #{phoneNumber}
+    </select>
+
+    <select id="findPasswordByNamePhoneAndEmail" resultType="string">
+        SELECT password
+        FROM member
+        WHERE name = #{name}
+          AND phone_number = #{phoneNumber}
+          AND email = #{email}
+    </select>
+
+    <select id="findAllMembers" resultType="org.example.memberservice.domain.Member">
+        SELECT id,
+               name,
+               age,
+               ihidnum,
+               phone_number,
+               email,
+               password,
+               nickname,
+               status,
+               reported_count,
+               user_grant
+        FROM member
+    </select>
+
+    <select id="findMemberById" resultType="org.example.memberservice.domain.Member">
+        SELECT id,
+               name,
+               age,
+               ihidnum,
+               phone_number,
+               email,
+               password,
+               nickname,
+               status,
+               reported_count,
+               user_grant
+        FROM member
+        WHERE id = #{id}
+    </select>
+</mapper>

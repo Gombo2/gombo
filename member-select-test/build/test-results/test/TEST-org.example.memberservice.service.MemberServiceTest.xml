@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.memberservice.service.MemberServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-16T14:32:18.924Z" hostname="고성연" time="0.481">
+  <properties/>
+  <testcase name="findMember()" classname="org.example.memberservice.service.MemberServiceTest" time="0.481"/>
+  <system-out><![CDATA[23:32:17.768 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.memberservice.service.MemberServiceTest]: MemberServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:32:17.836 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.memberservice.MemberSelectTestApplication for test class org.example.memberservice.service.MemberServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-03-16T23:32:18.102+09:00  INFO 37904 --- [    Test worker] o.e.m.service.MemberServiceTest          : Starting MemberServiceTest using Java 17.0.3 with PID 37904 (started by rhtjd in C:\projectcodes\member-select-test)
+2025-03-16T23:32:18.102+09:00  INFO 37904 --- [    Test worker] o.e.m.service.MemberServiceTest          : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T23:32:18.914+09:00  INFO 37904 --- [    Test worker] o.e.m.service.MemberServiceTest          : Started MemberServiceTest in 0.984 seconds (process running for 1.675)
+2025-03-16T23:32:19.319+09:00  INFO 37904 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-16T23:32:19.370+09:00  INFO 37904 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@361f26b4
+2025-03-16T23:32:19.372+09:00  INFO 37904 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+member = Member{id=1, name='고성연', age=27, ihidnum='999999-11111111', phoneNumber='010-3791-8329', email='rhtjddus0502@gmail.com', password='testpassword', nickname='Gombo', status=1, reportedCount=0, userGrant=0}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
