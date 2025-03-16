@@ -1,6 +1,7 @@
 package org.example.memberservice.service;
 
 import org.example.memberservice.domain.Member;
+import org.example.memberservice.domain.Status;
 import org.example.memberservice.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +45,22 @@ public class MemberService {
             throw new IllegalArgumentException("해당 회원이 존재하지 않습니다.");
         }
         return member;
+    }
+
+    public Status checkStatus(int id) {
+        byte status = memberRepository.findMemberStatus(id);
+        return Status.fromValue(status);
+    }
+
+    public void validDuplicateMemberEmail(String email) {
+        if(memberRepository.existsByEmail(email)) {
+            throw new IllegalArgumentException("이미 존재하는 이메일입니다. : " + email);
+        }
+    }
+
+    public void validDuplicateMemberPhoneNumber(String phoneNumber) {
+        if(memberRepository.existsByPhoneNumber(phoneNumber)) {
+            throw new IllegalArgumentException("이미 존재하는 전화번호입니다. : " + phoneNumber);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package org.example.memberservice.service;
 
 import org.example.memberservice.domain.Member;
+import org.example.memberservice.domain.Status;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,16 +31,23 @@ public class MemberServiceTest {
     }
     
     @Test
-    public void findAllMember() {
+    public void testFindAllMember() {
         List<Member> members = memberService.findAllMembers();
         assertEquals(3, members.size());
         System.out.println("members = " + members.toString());
     }
 
     @Test
-    public void findMember() {
+    public void testFindMember() {
         Member member = memberService.findMember(1);
         assertEquals(1, member.getId());
         System.out.println("member = " + member.toString());
+    }
+
+    @Test
+    public void testCheckStatus() {
+        Status status = memberService.checkStatus(3);
+        assertEquals(Status.ACTIVE, status); // Enum으로 확인
+        System.out.println("현재 회원의 상태는: " + status + " 입니다");
     }
 }

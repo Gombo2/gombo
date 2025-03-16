@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.memberprofliepage.repository.MemberProfileRepository">
+    <select id="findByMemberProfileByMemberId" resultType="org.example.memberprofilepage.domain.MemberProfile">
+        SELECT id,
+               exp,
+               level,
+               introduce,
+               preferred_area,
+               git_address,
+               score,
+               is_profile_image,
+               member_id
+        FROM member_profile_page
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findExpAndLevelById" resultType="org.example.memberprofliepage.domain.ExpAndLevelDTO">
+        SELECT
+            exp,
+            level
+            FROM member_profile_page
+            WHERE id = #{id}
+    </select>
+</mapper>

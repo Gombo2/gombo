@@ -14,4 +14,10 @@ public interface MemberRepository {
     List<Member> findAllMembers();
 
     Member findMemberById(int id);
+
+    byte findMemberStatus(int id);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByPhoneNumber(String phoneNumber);
 }

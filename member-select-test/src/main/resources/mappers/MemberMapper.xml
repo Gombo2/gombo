@@ -48,4 +48,23 @@
         FROM member
         WHERE id = #{id}
     </select>
+
+    <select id="findMemberStatus" resultType="byte">
+        SELECT status
+        FROM member
+        WHERE id = #{id}
+    </select>
+
+    <select id="existsByEmail" resultType="boolean">
+        SELECT EXISTS(SELECT 1
+                      FROM member
+                      WHERE email = #{email})
+    </select>
+
+    <select id="existsByPhoneNumber" resultType="boolean">
+        SELECT EXISTS(SELECT 1
+                      FROM member
+                      WHERE phone_number = #{phoneNumber})
+    </select>
+
 </mapper>
